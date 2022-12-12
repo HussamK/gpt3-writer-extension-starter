@@ -1,0 +1,20 @@
+{
+  "name": "Journal Prompt Creator",
+  "description": "Write what you are feeling, we'll generate a prompt to help you journal about it.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "48": "assets/48.png",
+    "72": "assets/72.png",
+    "96": "assets/96.png",
+    "144": "assets/144.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Generate journal prompt"
+  },
+  "background": {
+    "service_worker": "scripts/contextMenuServiceWorker.js"
+  },
+  "permissions": ["contextMenus", "tabs", "storage"]
+}
