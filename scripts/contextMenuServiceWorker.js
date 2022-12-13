@@ -53,6 +53,9 @@ const generate = async (prompt) => {
 
 const generateCompletionAction = async (info) => {
 	try {
+    
+    sendMessage('generating...');
+
     const { selectionText } = info;
     const basePromptPrefix =
       `
@@ -63,11 +66,12 @@ const generateCompletionAction = async (info) => {
 
 		// Add this to call GPT-3
     const baseCompletion = await generate(`${basePromptPrefix}${selectionText}`);
-
-    // Let's see what we get!
-    console.log(baseCompletion.text)	
+    sendMessage("trying to do openai")
+    sendMessage(baseCompletion.text);
   } catch (error) {
     console.log(error);
+
+    sendMessage(error.toString());
   }
 };
 
